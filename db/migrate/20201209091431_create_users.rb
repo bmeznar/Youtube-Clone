@@ -4,9 +4,10 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :email
       t.string :encrypted_password
-      t.lo :profilePic
-      t.lo :pagePic
+      t.string :profilePic
+      t.string :pagePic
       t.datetime :birthday
+      has_one_attached :profileImg, :dependent => :destroy
 
       t.timestamps
     end
